@@ -1,0 +1,8 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "GameConfig", menuName = "Configs/GameC onfig")]
+public class GameConfig : ScriptableObject
+{
+    public CommonConfig CommonConfig;
+    public InputConfig InputConfig;
+}
