@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   CommonConfig: {fileID: 11400000, guid: 04be218822888bf40816296472daad62, type: 2}
+  PlayerConfig: {fileID: 11400000, guid: 8c2778dcc26da554aaf735aae5b18071, type: 2}
   InputConfig: {fileID: 11400000, guid: 6efc4322833815f4cbfa23432d99e817, type: 2}

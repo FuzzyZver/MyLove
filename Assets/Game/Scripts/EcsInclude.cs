@@ -5,6 +5,7 @@ public class EcsInclude: MonoBehaviour
 {
     [SerializeField] private UI _ui;
     [SerializeField] private GameConfig _gameConfig;
+    [SerializeField] private SceneData _sceneData;
     private EcsWorld _world;
     private EcsSystems _systems;
 
@@ -15,7 +16,9 @@ public class EcsInclude: MonoBehaviour
 
         _systems
             //Add (new ...
+            .Add(new LevelInitSystem())
             .Add(new InputSystem())
+            .Add(new MovementSystem())
 
             //OneFrame<..
             .OneFrame<MoveInputEvent>()
@@ -28,6 +31,7 @@ public class EcsInclude: MonoBehaviour
             .Inject(_world)
             .Inject(_gameConfig)
             .Inject(_ui)
+            .Inject(_sceneData)
 
             .Init();
     }

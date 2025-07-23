@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4995a473d0682cc4f84b269be0d9bda5, type: 3}
   m_Name: InputConfig
   m_EditorClassIdentifier: 
-  MoveKeyTag: 
-  InteractionKeyTag: 
-  DashKeyTag: 
-  JumpKeyTag: 
-  CloseAttackKeyTag: 
-  FarAttackKeyTag: 
-  AbilityKeyTag: 
-  NextFightStyleKeyTag: 
-  LastFightStyleKeyTag: 
+  MoveKeyTag: Move
+  InteractionKeyTag: Interact
+  DashKeyTag: Dash
+  JumpKeyTag: Jump
+  CloseAttackKeyTag: CloseAttack
+  FarAttackKeyTag: FarAttack
+  AbilityKeyTag: Ability
+  NextFightStyleKeyTag: NFS
+  LastFightStyleKeyTag: LFS
+  MoveInputGravity: 1

@@ -45,7 +45,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_dashInputAction != null)
             _dashInputAction.performed += OnDashKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{dashKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{dashKeyTag}| for dash is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string interactionKeytag = GameConfig.InputConfig.InteractionKeyTag;
@@ -53,7 +53,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_interacionInputAction != null)
             _interacionInputAction.performed += OnInteractionKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{interactionKeytag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{interactionKeytag}| for interaction is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string closeAttackKeyTag = GameConfig.InputConfig.CloseAttackKeyTag;
@@ -61,7 +61,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_closeAttackInputAction != null)
             _closeAttackInputAction.performed += OnCloseAttackKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{closeAttackKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{closeAttackKeyTag}| for close attack is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string farAttackKeyTag = GameConfig.InputConfig.FarAttackKeyTag;
@@ -69,7 +69,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_farAttackInputAction != null)
             _farAttackInputAction.performed += OnFarAttackKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{farAttackKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{farAttackKeyTag}| for far attack is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string abilityKeyTag = GameConfig.InputConfig.AbilityKeyTag;
@@ -77,7 +77,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_abilityInputAction != null)
             _abilityInputAction.performed += OnAbilityKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{abilityKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{abilityKeyTag}| for ability is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string nextFightStyleKeyTag = GameConfig.InputConfig.NextFightStyleKeyTag;
@@ -85,7 +85,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_nextFightStyleInputAction != null)
             _nextFightStyleInputAction.performed += OnNFSKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{nextFightStyleKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{nextFightStyleKeyTag}| for next fight style is not recognized!" +
                                "Please check Input Config or Input System Settings!");
 
         string lastFightStyleKeyTag = GameConfig.InputConfig.LastFightStyleKeyTag;
@@ -93,7 +93,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
         if (_lastFightStyleInputAction != null)
             _lastFightStyleInputAction.performed += OnLFSKeyPress;
         else
-            Debug.LogError($"[INPUT SYSTEM] Key tag |{lastFightStyleKeyTag}| for jump is not recognized!" +
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{lastFightStyleKeyTag}| for last fight style is not recognized!" +
                                "Please check Input Config or Input System Settings!");
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
