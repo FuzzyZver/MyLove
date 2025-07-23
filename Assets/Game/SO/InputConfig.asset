@@ -21,4 +21,5 @@ MonoBehaviour:
   AbilityKeyTag: Ability
   NextFightStyleKeyTag: NFS
   LastFightStyleKeyTag: LFS
-  MoveInputGravity: 1
+  MoveInputGravity: 200
+  GroundDistanceTreshold: 0.5

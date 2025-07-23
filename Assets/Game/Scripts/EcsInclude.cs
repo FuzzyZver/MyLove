@@ -19,13 +19,18 @@ public class EcsInclude: MonoBehaviour
             .Add(new LevelInitSystem())
             .Add(new InputSystem())
             .Add(new MovementSystem())
+            .Add(new GroundRaycastSystem())
+            .Add(new GroundCheckSystem())
+            .Add(new JumpSystem())
+            .OneFrame<JumpInputEvent>()
 
             //OneFrame<..
             .OneFrame<MoveInputEvent>()
             .OneFrame<InteractInputEvent>()
-            .OneFrame<JumpInputEvent>()
             .OneFrame<DashInputEvent>()
             .OneFrame<NumbersInputEvent>()
+            .OneFrame<GroundRaycastEvent>()
+            .OneFrame<GroundEvent>()
 
 
             .Inject(_world)

@@ -5,4 +5,5 @@ public class PlayerConfig : ScriptableObject
 {
     public PlayerActor PlayerActor;
     public float Speed;
+    public float JumpForce;
 }

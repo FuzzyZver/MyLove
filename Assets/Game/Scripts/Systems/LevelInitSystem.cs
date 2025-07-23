@@ -1,9 +1,9 @@
 using UnityEngine;
 using Leopotam.Ecs;
 
-public class LevelInitSystem: Injects, IEcsInitSystem
+public class LevelInitSystem: Injects, IEcsPreInitSystem
 {
-    public void Init()
+    public void PreInit()
     {
         SceneData.PlayerOnScene.Init(EcsWorld);
     }

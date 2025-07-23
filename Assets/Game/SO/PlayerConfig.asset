@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   PlayerActor: {fileID: 0}
-  Speed: 2
+  Speed: 15
+  JumpForce: 100
