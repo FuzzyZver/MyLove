@@ -21,4 +21,5 @@ public class InputConfig : ScriptableObject
     [Header("OtherProps")]
     public float MoveInputGravity;
     public float GroundDistanceTreshold;
+    public float JumpDuration;
 }

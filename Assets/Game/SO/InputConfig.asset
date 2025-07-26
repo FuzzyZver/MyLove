@@ -23,3 +23,4 @@ MonoBehaviour:
   LastFightStyleKeyTag: LFS
   MoveInputGravity: 200
   GroundDistanceTreshold: 0.5
+  JumpDuration: 0
