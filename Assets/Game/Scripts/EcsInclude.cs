@@ -22,6 +22,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new GroundRaycastSystem())
             .Add(new GroundCheckSystem())
             .Add(new JumpSystem())
+            .Add(new DashSystem())
             .OneFrame<JumpInputEvent>()
 
             //OneFrame<..

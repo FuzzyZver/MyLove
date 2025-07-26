@@ -22,7 +22,6 @@ public class JumpSystem: Injects, IEcsInitSystem, IEcsRunSystem
             if (playerEntity.Has<DeadFlag>()) return;
             if (playerEntity.Has<FreezeFlag>()) return;
 
-            Debug.Log($"adwddwd");
             var playerRigidbody = playerEntity.Get<RigidbodyRef>().Rigidbody2D;
             playerRigidbody.AddForce(Vector3.up * _jumpForce, ForceMode2D.Impulse);
         }

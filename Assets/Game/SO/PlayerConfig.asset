@@ -15,3 +15,5 @@ MonoBehaviour:
   PlayerActor: {fileID: 0}
   Speed: 15
   JumpForce: 100
+  DashDistance: 30
+  DashTime: 0.06
