@@ -9,7 +9,7 @@ public abstract class Actor : MonoBehaviour
     public void Init(EcsWorld world)
     {
         _world = world;
-        _entity =  _world.NewEntity();
+        _entity = _world.NewEntity();
         ExpandEntity(_entity);
     }
 
@@ -17,4 +17,13 @@ public abstract class Actor : MonoBehaviour
 
     public EcsWorld GetWorld() => _world;
     public EcsEntity GetEntity() => _entity;
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        _world.NewEntity().Get<OnTriggerEnterEvent>() = new OnTriggerEnterEvent
+        {
+            ThisGameObject = this.gameObject,
+            OtherGameObject = other.gameObject
+        };
+    }
 }

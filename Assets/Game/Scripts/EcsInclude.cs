@@ -24,6 +24,8 @@ public class EcsInclude: MonoBehaviour
             .Add(new JumpSystem())
             .Add(new DashSystem())
             .OneFrame<JumpInputEvent>()
+            .Add(new TriggerSystem())
+            .OneFrame<OnTriggerEnterEvent>()
 
             //OneFrame<..
             .OneFrame<MoveInputEvent>()
