@@ -22,5 +22,6 @@ MonoBehaviour:
   NextFightStyleKeyTag: NFS
   LastFightStyleKeyTag: LFS
   MoveInputGravity: 200
-  GroundDistanceTreshold: 0.5
+  GroundDistanceThreshold: 0.5
   JumpDuration: 0
+  EyeDistanceThreshold: 1

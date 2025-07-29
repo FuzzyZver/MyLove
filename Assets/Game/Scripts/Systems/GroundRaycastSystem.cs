@@ -9,7 +9,7 @@ public class GroundRaycastSystem: Injects, IEcsInitSystem, IEcsRunSystem
     public void Init()
     {
         _stepPosition = SceneData.PlayerOnScene.GetEntity().Get<StepPositionRef>().StepPosition;
-        _groundDistanceTreshold = GameConfig.InputConfig.GroundDistanceTreshold;
+        _groundDistanceTreshold = GameConfig.InputConfig.GroundDistanceThreshold;
 
     }
 
