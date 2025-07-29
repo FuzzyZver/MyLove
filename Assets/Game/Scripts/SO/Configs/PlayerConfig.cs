@@ -8,4 +8,5 @@ public class PlayerConfig : ScriptableObject
     public float JumpForce;
     public float DashDistance;
     public float DashTime;
+    public float Health;
 }

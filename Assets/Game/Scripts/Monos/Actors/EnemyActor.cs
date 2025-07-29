@@ -10,5 +10,7 @@ public class EnemyActor: Actor
     {
         entity.Get<RigidbodyRef>().Rigidbody2D = _rigidbody2D;
         entity.Get<TransformRef>().Transform = _transform;
+        entity.Get<GameObjectRef>().GameObject = this.gameObject;
+        entity.Get<HealthComponent>().HealthValue = 100;
     }
 }

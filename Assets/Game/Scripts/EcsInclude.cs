@@ -26,6 +26,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<JumpInputEvent>()
             .Add(new TriggerSystem())
             .OneFrame<OnTriggerEnterEvent>()
+            .Add(new HealthControlSystem())
 
             //OneFrame<..
             .OneFrame<MoveInputEvent>()
