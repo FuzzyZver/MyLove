@@ -28,6 +28,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<OnTriggerEnterEvent>()
             .Add(new HealthControlSystem())
             .Add(new EyeRaycastSystem())
+            .Add(new CloseAttackSystem())
             
 
             //OneFrame<..
@@ -35,10 +36,12 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<InteractInputEvent>()
             .OneFrame<DashInputEvent>()
             .OneFrame<NumbersInputEvent>()
+            .OneFrame<CloseAttackInputEvent>()
             .OneFrame<GroundRaycastEvent>()
             .OneFrame<GroundEvent>()
             .OneFrame<CloseEyeRaycastEvent>()
             .OneFrame<FarEyeRaycastEvent>()
+            .OneFrame<DamageEvent>()
 
 
             .Inject(_world)

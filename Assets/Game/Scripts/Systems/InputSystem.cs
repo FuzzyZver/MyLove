@@ -141,7 +141,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
 
     private void OnCloseAttackKeyPress(InputAction.CallbackContext callbackContext)
     {
-
+        EcsWorld.NewEntity().Get<CloseAttackInputEvent>();
     }
 
     private void OnFarAttackKeyPress(InputAction.CallbackContext callbackContext)

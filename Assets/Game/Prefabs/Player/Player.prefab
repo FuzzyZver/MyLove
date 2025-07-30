@@ -202,3 +202,4 @@ MonoBehaviour:
   _transform: {fileID: 5494211812306055714}
   _rigidbody2D: {fileID: 7909916780552487967}
   _stepPosition: {fileID: 4058603410408915000}
+  _collider2D: {fileID: 7240075588985529789}

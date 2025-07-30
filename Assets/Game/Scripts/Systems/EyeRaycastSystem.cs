@@ -5,12 +5,15 @@ public class EyeRaycastSystem: Injects, IEcsInitSystem, IEcsRunSystem
 {
     private EcsFilter<MoveInputEvent> _moveInputEventFilter;
     private Transform _playerTransform;
+    private Collider2D _playerCollider2D;
     private float _eyeDistanceThreshold;
+    private float _skin = 0.01f;
     private Vector2 _lookVector = Vector2.right;
 
     public void Init()
     {
         _playerTransform = SceneData.PlayerOnScene.GetEntity().Get<TransformRef>().Transform;
+        _playerCollider2D = SceneData.PlayerOnScene.GetEntity().Get<Collider2DRef>().Collider2D;
         _eyeDistanceThreshold = GameConfig.InputConfig.EyeDistanceThreshold;
     }
     
@@ -30,8 +33,10 @@ public class EyeRaycastSystem: Injects, IEcsInitSystem, IEcsRunSystem
             else continue;
         }
         if (_playerTransform  == null) return;
-        RaycastHit2D closeHitInfo = Physics2D.Raycast(_playerTransform.position, _lookVector, _eyeDistanceThreshold);
-        RaycastHit2D farHitInfo = Physics2D.Raycast(_playerTransform.position, _lookVector);
+        Vector2 origin = (Vector2)_playerTransform.position + _lookVector * (_playerCollider2D.bounds.extents.magnitude + _skin);
+        RaycastHit2D closeHitInfo = Physics2D.Raycast(origin, _lookVector, _eyeDistanceThreshold);
+        RaycastHit2D farHitInfo = Physics2D.Raycast(origin, _lookVector);
+
         if(closeHitInfo.collider != null)
         {
             EcsWorld.NewEntity().Get<CloseEyeRaycastEvent>().HitInfo = closeHitInfo;
