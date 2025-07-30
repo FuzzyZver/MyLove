@@ -29,6 +29,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new HealthControlSystem())
             .Add(new EyeRaycastSystem())
             .Add(new CloseAttackSystem())
+            .Add(new DamageSystem())
             
 
             //OneFrame<..
