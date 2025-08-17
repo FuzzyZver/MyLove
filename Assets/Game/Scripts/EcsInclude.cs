@@ -30,6 +30,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new EyeRaycastSystem())
             .Add(new CloseAttackSystem())
             .Add(new DamageSystem())
+            .Add(new ShieldRegenerationSystem())
             
 
             //OneFrame<..
@@ -38,6 +39,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<DashInputEvent>()
             .OneFrame<NumbersInputEvent>()
             .OneFrame<CloseAttackInputEvent>()
+            .OneFrame<FarAttackInputEvent>()
             .OneFrame<GroundRaycastEvent>()
             .OneFrame<GroundEvent>()
             .OneFrame<CloseEyeRaycastEvent>()

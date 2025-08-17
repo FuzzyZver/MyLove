@@ -19,3 +19,5 @@ MonoBehaviour:
   DashTime: 0.06
   Health: 100
   Damage: 20
+  Shield: 50
+  TimeUntilRegenerationShield: 5

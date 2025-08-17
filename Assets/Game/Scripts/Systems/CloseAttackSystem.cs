@@ -18,7 +18,7 @@ public class CloseAttackSystem: Injects, IEcsRunSystem
                 EcsWorld.NewEntity().Get<DamageEvent>() = new DamageEvent
                 {
                     DamageValue = _playerDamage,
-                    Actor = _closeEyeRaycastEventFilter.Get1(j).HitInfo.collider.GetComponent<Actor>()
+                    Entity = _closeEyeRaycastEventFilter.Get1(j).HitInfo.collider.GetComponent<Actor>().GetEntity()
                 };
             }
         }

@@ -1,7 +1,8 @@
 using UnityEngine;
+using Leopotam.Ecs;
 
 public struct DamageEvent
 {
     public float DamageValue;
-    public Actor Actor;
+    public EcsEntity Entity;
 }

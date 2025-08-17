@@ -10,9 +10,17 @@ public class DamageSystem: Injects, IEcsRunSystem
         foreach(int i in _damageEventFilter)
         {
             float damage = _damageEventFilter.Get1(i).DamageValue;
-            var entity = _damageEventFilter.Get1(i).Actor.GetEntity();
-            entity.Get<HealthComponent>().HealthValue -= damage;
-            Debug.Log($"{entity.Get<HealthComponent>().HealthValue}");
+            var entity = _damageEventFilter.Get1(i).Entity;
+            if (entity.Has<ShieldComponent>() && entity.Get<ShieldComponent>().ShieldValue > 0)
+            {
+                entity.Get<ShieldComponent>().ShieldValue -= damage;
+                Debug.Log($"{entity.Get<ShieldComponent>().ShieldValue}");
+            }
+            else
+            {
+                entity.Get<HealthComponent>().HealthValue -= damage;
+                Debug.Log($"{entity.Get<HealthComponent>().HealthValue}");
+            }
         }
     }
 }

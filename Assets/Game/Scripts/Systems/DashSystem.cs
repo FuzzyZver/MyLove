@@ -39,7 +39,6 @@ public class DashSystem: Injects, IEcsInitSystem, IEcsRunSystem
                 playerEntity.Get<IsDashingFlag>();
                 _lastDashTime = Time.time;
             }
-
         }
         if (playerEntity.Has<IsDashingFlag>())
         {

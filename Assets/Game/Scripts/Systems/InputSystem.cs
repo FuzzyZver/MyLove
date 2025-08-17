@@ -146,7 +146,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
 
     private void OnFarAttackKeyPress(InputAction.CallbackContext callbackContext)
     {
-
+        EcsWorld.NewEntity().Get<FarAttackInputEvent>();
     }
 
     private void OnAbilityKeyPress(InputAction.CallbackContext callbackContext)

@@ -10,4 +10,6 @@ public class PlayerConfig : ScriptableObject
     public float DashTime;
     public float Health;
     public float Damage;
+    public float Shield;
+    public float TimeUntilRegenerationShield;
 }
