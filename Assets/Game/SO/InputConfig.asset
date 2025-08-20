@@ -21,6 +21,7 @@ MonoBehaviour:
   AbilityKeyTag: Ability
   NextFightStyleKeyTag: NFS
   LastFightStyleKeyTag: LFS
+  ConsoleTag: Console
   MoveInputGravity: 200
   GroundDistanceThreshold: 1
   JumpDuration: 0

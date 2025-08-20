@@ -45,6 +45,10 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<CloseEyeRaycastEvent>()
             .OneFrame<FarEyeRaycastEvent>()
             .OneFrame<DamageEvent>()
+            
+            .Add(new ConsoleSystem())
+            .OneFrame<CommandEvent>()
+            .OneFrame<ConsoleOpenCloseEvent>()
 
 
             .Inject(_world)

@@ -17,6 +17,8 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
     private InputAction _lastFightStyleInputAction;
     private InputAction[] _numberInputActions;
 
+    private InputAction _cosoleInputAction;
+
     public void Init()
     {
         // оепбши рхо напюанрйх хмосрю вепег лернд RUN
@@ -81,7 +83,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
                                "Please check Input Config or Input System Settings!");
 
         string nextFightStyleKeyTag = GameConfig.InputConfig.NextFightStyleKeyTag;
-        _nextFightStyleInputAction = Input.actions.FindAction(farAttackKeyTag);
+        _nextFightStyleInputAction = Input.actions.FindAction(nextFightStyleKeyTag);
         if (_nextFightStyleInputAction != null)
             _nextFightStyleInputAction.performed += OnNFSKeyPress;
         else
@@ -89,11 +91,19 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
                                "Please check Input Config or Input System Settings!");
 
         string lastFightStyleKeyTag = GameConfig.InputConfig.LastFightStyleKeyTag;
-        _lastFightStyleInputAction = Input.actions.FindAction(farAttackKeyTag);
+        _lastFightStyleInputAction = Input.actions.FindAction(lastFightStyleKeyTag);
         if (_lastFightStyleInputAction != null)
             _lastFightStyleInputAction.performed += OnLFSKeyPress;
         else
             Debug.LogError($"[INPUT SYSTEM] Key tag |{lastFightStyleKeyTag}| for last fight style is not recognized!" +
+                               "Please check Input Config or Input System Settings!");
+
+        string consoleTag = GameConfig.InputConfig.ConsoleTag;
+        _cosoleInputAction = Input.actions.FindAction(consoleTag);
+        if (_cosoleInputAction != null)
+            _cosoleInputAction.performed += OnConsoleKeyPress;
+        else
+            Debug.LogError($"[INPUT SYSTEM] Key tag |{consoleTag}| for last fight style is not recognized!" +
                                "Please check Input Config or Input System Settings!");
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -162,6 +172,11 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
     private void OnLFSKeyPress(InputAction.CallbackContext callbackContext)
     {
 
+    }
+
+    private void OnConsoleKeyPress(InputAction.CallbackContext callbackContext)
+    {
+        EcsWorld.NewEntity().Get<ConsoleOpenCloseEvent>();
     }
 
     public void Run()

@@ -17,6 +17,8 @@ public class InputConfig : ScriptableObject
     public string NextFightStyleKeyTag;
     public string LastFightStyleKeyTag;
 
+    public string ConsoleTag;
+
     [Space]
     [Header("OtherProps")]
     public float MoveInputGravity;
