@@ -9,9 +9,14 @@ public class ConsoleSystem: Injects, IEcsInitSystem, IEcsRunSystem
     private EcsFilter<CommandEvent> _commandEventFilter;
     private EcsFilter<ConsoleOpenCloseEvent> _consoleOpenCloseEventFilter;
     private Dictionary<string, Command> _commands = new Dictionary<string, Command>();
+    private ConsoleView _console;
+    private PlayerActor _player;
     
     public void Init()
     {
+        _console = UI.Console;
+        _player = SceneData.PlayerOnScene;
+
         var methods = GetType().GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
 
         foreach (var method in methods)
@@ -41,7 +46,7 @@ public class ConsoleSystem: Injects, IEcsInitSystem, IEcsRunSystem
 
             string comandName = parts[0].ToLower();
 
-            if(_commands.TryGetValue(comandName, out var command))
+            if (_commands.TryGetValue(comandName, out var command))
             {
                 try
                 {
@@ -89,20 +94,39 @@ public class ConsoleSystem: Injects, IEcsInitSystem, IEcsRunSystem
     {
         foreach (var kvp in _commands)
         {
-            Debug.Log($"{kvp.Key} - {kvp.Value.Name}");
+            _console.SetConsoleText($"{kvp.Key} - {kvp.Value.Name}");
         }
+    }
+
+    [CommandArgs("resist", typeof(int))]
+    public void SetResist(int value)
+    {
+        _player.GetEntity().Get<ResistanceFlag>().Time = value;
+        _console.SetConsoleText($"Player have resistance until: {value} seconds");
     }
 
     [CommandArgs("addhp", typeof(int))]
     public void AddHealth(int value)
     {
-        SceneData.PlayerOnScene.GetEntity().Get<HealthComponent>().HealthValue += value;
-        Debug.Log($"{SceneData.PlayerOnScene.GetEntity().Get<HealthComponent>().HealthValue}");
+        _player.GetEntity().Get<HealthComponent>().HealthValue += value;
+        _console.SetConsoleText($"Player health: {_player.GetEntity().Get<HealthComponent>().HealthValue}");
+    }
+
+    [CommandArgs("damage", typeof(int))]
+    public void Damage(int value)
+    {
+        EcsWorld.NewEntity().Get<DamageEvent>() = new DamageEvent()
+        {
+            DamageValue = value,
+            Entity = _player.GetEntity()
+        };
+        _console.SetConsoleText($"Damage to Player: {value}");
     }
 
     [Command("kill")]
     public void Kill()
     {
-        SceneData.PlayerOnScene.GetEntity().Get<HealthComponent>().HealthValue = -100000;
+        _player.GetEntity().Get<HealthComponent>().HealthValue = -1000000;
+        _console.SetConsoleText("Игрок убит");
     }
 }

@@ -28,11 +28,18 @@ public class ShieldRegenerationSystem : Injects, IEcsInitSystem, IEcsRunSystem
         {
             var entity = _damageEventFilter.Get1(i).Entity;
             if (entity.Has<ShieldComponent>()) _lastHitTime = 0;
+            if (playerEntity.Get<ShieldComponent>().ShieldValue < 0)
+            {
+                playerEntity.Get<HealthComponent>().HealthValue += playerEntity.Get<ShieldComponent>().ShieldValue;
+                playerEntity.Get<ShieldComponent>().ShieldValue = 0;
+                UI.Console.SetConsoleText($"Shield: {playerEntity.Get<ShieldComponent>().ShieldValue}");
+                UI.Console.SetConsoleText($"Health: {playerEntity.Get<HealthComponent>().HealthValue}");
+            }
         }
 
         if (Time.time - _lastRegenTime < _regenCooldown) return;
         _lastRegenTime = Time.time;
-        if (_lastHitTime == _timeUntilRegenShield && playerEntity.Get<ShieldComponent>().ShieldValue < playerEntity.Get<ShieldComponent>().MaxShieldValue)
+        if (_lastHitTime == _timeUntilRegenShield && playerEntity.Get<ShieldComponent>().ShieldValue<playerEntity.Get<ShieldComponent>().MaxShieldValue)
         {
             playerEntity.Get<ShieldComponent>().ShieldValue++;
         }

@@ -14,10 +14,16 @@ public class ConsoleView : MonoBehaviour
     {
         string input = _comandInputField.text;
         if (string.IsNullOrWhiteSpace(input)) return;
+        //тут важно убрать ZERO WIDTH SPACE и BOM-символ чтобы команда нормально распознавалась
+        input = input.Replace("\u200B", "").Replace("\uFEFF", "").Trim();
         _world.NewEntity().Get<CommandEvent>().CommandName = input;
-        Debug.Log($"<{input}>");
-        _consoleText.text = $"\n> {input}";
+        _consoleText.text += $"\n> {input}";
         _comandInputField.text = " ";
+    }
+
+    public void SetConsoleText(string text)
+    {
+        _consoleText.text += $"\n>{text}";
     }
 
 }

@@ -31,6 +31,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new CloseAttackSystem())
             .Add(new DamageSystem())
             .Add(new ShieldRegenerationSystem())
+            .Add(new ResistanceSystem())
             
 
             //OneFrame<..
