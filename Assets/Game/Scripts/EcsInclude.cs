@@ -32,6 +32,8 @@ public class EcsInclude: MonoBehaviour
             .Add(new DamageSystem())
             .Add(new ShieldRegenerationSystem())
             .Add(new ResistanceSystem())
+            .Add(new AddItemSystem())
+            .Add(new RemoveItemSystem())
             
 
             //OneFrame<..
@@ -46,6 +48,9 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<CloseEyeRaycastEvent>()
             .OneFrame<FarEyeRaycastEvent>()
             .OneFrame<DamageEvent>()
+            .OneFrame<AddWeaponEvent>()
+            .OneFrame<AddRuneEvent>()
+            .OneFrame<RemoveItemEvent>()
             
             .Add(new ConsoleSystem())
             .OneFrame<CommandEvent>()

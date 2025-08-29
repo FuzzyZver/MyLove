@@ -1,5 +1,6 @@
 using UnityEngine;
 using Leopotam.Ecs;
+using System.Collections.Generic;
 
 public class PlayerActor: Actor
 {
@@ -25,6 +26,11 @@ public class PlayerActor: Actor
         {
             MaxShieldValue = _gameConfig.PlayerConfig.Shield,
             ShieldValue = _gameConfig.PlayerConfig.Shield
+        };
+        entity.Get<InventoryComponent>() = new InventoryComponent()
+        {
+            RuneSlots = new List<Rune>(),
+            MaxRunes = 20
         };
     }
 }

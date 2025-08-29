@@ -129,4 +129,24 @@ public class ConsoleSystem: Injects, IEcsInitSystem, IEcsRunSystem
         _player.GetEntity().Get<HealthComponent>().HealthValue = -1000000;
         _console.SetConsoleText("Игрок убит");
     }
+
+    [CommandArgs("addWeaponC", typeof(int))]
+    public void AddWeaponC(int value)
+    {
+        EcsWorld.NewEntity().Get<AddWeaponEvent>() = new AddWeaponEvent()
+        {
+            Slot = 0,
+            Weapon = GameConfig.ItemsConfig.CloseWeapons[value]
+        };
+    }
+
+    [CommandArgs("removeWeaponC", typeof(int))]
+    public void RemoveWeaponC(int value)
+    {
+        EcsWorld.NewEntity().Get<RemoveItemEvent>() = new RemoveItemEvent()
+        {
+            ItemType = 0,
+            Slot = value
+        };
+    }
 }
