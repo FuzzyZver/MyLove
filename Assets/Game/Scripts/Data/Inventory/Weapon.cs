@@ -7,6 +7,7 @@ public class Weapon
 {
     public int Id;
     public string Name;
+    public Sprite Sprite;
     [Header("Properties")]
     public float Damage;
     public float KickSpeed;

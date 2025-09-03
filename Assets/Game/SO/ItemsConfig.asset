@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae530b2f770e67a498eb35ab9ec08af8, type: 3}
   m_Name: ItemsConfig
   m_EditorClassIdentifier: 
+  ItemActor: {fileID: 5293827162907231077, guid: eadbc9559b7b88b42a9087b5a359a76f, type: 3}
   CloseWeapons:
   - Id: 0
     Name: popa
+    Sprite: {fileID: -2413806693520163455, guid: a7581c7c1592c5f43b9be17eceaa0e5e, type: 3}
     Damage: 0
     KickSpeed: 0
     Runes: []
   - Id: 1
     Name: Pisya
+    Sprite: {fileID: -2413806693520163455, guid: a7581c7c1592c5f43b9be17eceaa0e5e, type: 3}
     Damage: 0
     KickSpeed: 0
     Runes: []
   FarWeapons: []
-  runes: []
+  runes:
+  - Id: 0
+    Name: 
+    Sprite: {fileID: 0}

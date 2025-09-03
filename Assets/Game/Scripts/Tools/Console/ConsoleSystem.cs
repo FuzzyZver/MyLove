@@ -149,4 +149,14 @@ public class ConsoleSystem: Injects, IEcsInitSystem, IEcsRunSystem
             Slot = value
         };
     }
+
+    [CommandArgs("spawnWeapon", typeof(int))]
+    public void SpawnWeapon(int value)
+    {
+        EcsWorld.NewEntity().Get<SpawnItemEvent>() = new SpawnItemEvent()
+        {
+            SpawnPoint = new Vector2(-0, -2.5f),
+            Weapon = GameConfig.ItemsConfig.CloseWeapons[value]
+        };
+    }
 }

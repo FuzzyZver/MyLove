@@ -6,4 +6,5 @@ public class Rune
 {
     public int Id;
     public string Name;
+    public Sprite Sprite;
 }

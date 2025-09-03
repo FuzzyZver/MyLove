@@ -34,6 +34,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new ResistanceSystem())
             .Add(new AddItemSystem())
             .Add(new RemoveItemSystem())
+            .Add(new SpawnItemSystem())
             
 
             //OneFrame<..
@@ -51,6 +52,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<AddWeaponEvent>()
             .OneFrame<AddRuneEvent>()
             .OneFrame<RemoveItemEvent>()
+            .OneFrame<SpawnItemEvent>()
             
             .Add(new ConsoleSystem())
             .OneFrame<CommandEvent>()
