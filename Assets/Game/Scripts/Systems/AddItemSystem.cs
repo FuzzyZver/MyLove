@@ -25,13 +25,13 @@ public class AddItemSystem: Injects, IEcsInitSystem, IEcsRunSystem
                 if (playerEntity.Get<InventoryComponent>().CriticWeapon == null)
                 {
                     playerEntity.Get<InventoryComponent>().CriticWeapon = _addWeaponEventFilter.Get1(i).Weapon;
-                    UI.Console.SetConsoleText($"" +
+                    Debug.Log($"" +
                         $"Id: {playerEntity.Get<InventoryComponent>().CriticWeapon.Id}" +
                         $"Name: {playerEntity.Get<InventoryComponent>().CriticWeapon.Name}");
                 }
                 else
                 {
-                    UI.Console.SetConsoleText("«јЌя“ќќќќ јјј");
+                    //“ут как раз нужно вызывать создание экраны замены предмета
                 }
             }
             //“ревожник

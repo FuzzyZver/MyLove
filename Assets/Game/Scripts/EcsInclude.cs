@@ -35,6 +35,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new AddItemSystem())
             .Add(new RemoveItemSystem())
             .Add(new SpawnItemSystem())
+            .Add(new ItemPickUpSystem())
             
 
             //OneFrame<..
@@ -53,7 +54,9 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<AddRuneEvent>()
             .OneFrame<RemoveItemEvent>()
             .OneFrame<SpawnItemEvent>()
-            
+            .OneFrame<ItemEnterEvent>()
+            .OneFrame<ItemExitEvent>()
+
             .Add(new ConsoleSystem())
             .OneFrame<CommandEvent>()
             .OneFrame<ConsoleOpenCloseEvent>()
