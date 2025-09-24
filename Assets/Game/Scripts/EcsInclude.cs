@@ -36,6 +36,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new RemoveItemSystem())
             .Add(new SpawnItemSystem())
             .Add(new ItemPickUpSystem())
+            .Add(new FightStyleChangerSystem())
             
 
             //OneFrame<..

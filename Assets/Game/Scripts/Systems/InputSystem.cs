@@ -117,7 +117,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
             _numberInputActions[i] = Input.actions.FindAction(numberKeyTag);
             if (_numberInputActions[i] != null)
             {
-                var i1 = i;
+                var i1 = i+1;
                 _numberInputActions[i].performed += _ => OnNumberKeyPress(i1);
             }
             else
