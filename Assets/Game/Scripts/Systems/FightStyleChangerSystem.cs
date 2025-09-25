@@ -19,15 +19,15 @@ public class FightStyleChangerSystem: Injects, IEcsInitSystem, IEcsRunSystem
         {
             playerEntity.Del<CriticFlag>();
             playerEntity.Del<AlarmistFlag>();
-            playerEntity.Del<ChildrenFlag>();
+            playerEntity.Del<ChildFlag>();
             playerEntity.Del<RebelFlag>();
-            playerEntity.Del<RescuerFlag>();
+            playerEntity.Del<SaverFlag>();
             int fightStyleId = _numbersInputEventFilter.Get1(i).Number;
             if(fightStyleId == 1) playerEntity.Get<CriticFlag>();
             if (fightStyleId == 2) playerEntity.Get<AlarmistFlag>();
-            if (fightStyleId == 3) playerEntity.Get<ChildrenFlag>();
+            if (fightStyleId == 3) playerEntity.Get<ChildFlag>();
             if (fightStyleId == 4) playerEntity.Get<RebelFlag>();
-            if (fightStyleId == 5) playerEntity.Get<RescuerFlag>();
+            if (fightStyleId == 5) playerEntity.Get<SaverFlag>();
             playerEntity.Get<CombatComponent>().CombatStyleId = fightStyleId;
         }
     }

@@ -37,9 +37,9 @@ public class AddItemSystem: Injects, IEcsInitSystem, IEcsRunSystem
             //Тревожник
             if (slotId == 1)
             {
-                if (playerEntity.Get<InventoryComponent>().AlarmingWeapon == null)
+                if (playerEntity.Get<InventoryComponent>().AlarmistWeapon == null)
                 {
-                    playerEntity.Get<InventoryComponent>().AlarmingWeapon = _addWeaponEventFilter.Get1(i).Weapon;
+                    playerEntity.Get<InventoryComponent>().AlarmistWeapon = _addWeaponEventFilter.Get1(i).Weapon;
                 }
             }
             //Ребенок

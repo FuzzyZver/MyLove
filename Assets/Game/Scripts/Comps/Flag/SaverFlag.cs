@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public struct ChildrenFlag
+public struct SaverFlag
 {
     
 }

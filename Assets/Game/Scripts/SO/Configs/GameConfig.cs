@@ -7,4 +7,5 @@ public class GameConfig : ScriptableObject
     public PlayerConfig PlayerConfig;
     public InputConfig InputConfig;
     public ItemsConfig ItemsConfig;
+    public FightStylesConfig FightStylesConfig;
 }

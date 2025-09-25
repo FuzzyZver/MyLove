@@ -31,8 +31,8 @@ public class RemoveItemSystem: Injects, IEcsInitSystem, IEcsRunSystem
                 }
                 if (slot == 1)
                 {
-                    dropWeapon = playerEntity.Get<InventoryComponent>().AlarmingWeapon;
-                    playerEntity.Get<InventoryComponent>().AlarmingWeapon = null;
+                    dropWeapon = playerEntity.Get<InventoryComponent>().AlarmistWeapon;
+                    playerEntity.Get<InventoryComponent>().AlarmistWeapon = null;
                     UI.Console.SetConsoleText("ЫХЫХыхыхых а тут и так пусто)");
                 }
                 if (slot == 2)

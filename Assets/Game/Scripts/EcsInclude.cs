@@ -36,7 +36,13 @@ public class EcsInclude: MonoBehaviour
             .Add(new RemoveItemSystem())
             .Add(new SpawnItemSystem())
             .Add(new ItemPickUpSystem())
+
             .Add(new FightStyleChangerSystem())
+            .Add(new CriticSystem())
+            .Add(new AlarmistSystem())
+            .Add(new ChildSystem())
+            .Add(new RebelSystem())
+            .Add(new SaverSystem())
             
 
             //OneFrame<..
