@@ -32,5 +32,17 @@ public class PlayerActor: Actor
             RuneSlots = new List<Rune>(),
             MaxRunes = 20
         };
+        entity.Get<CombatComponent>() = new CombatComponent()
+        {
+            CombatStyleId = 1
+        };
+        entity.Get<AbilitiesComponent>() = new AbilitiesComponent()
+        {
+            CriticAbilityId = 1,
+            AlarmistAbilityId = 1,
+            ChildAbilityId = 1,
+            RebelAbilityId = 1,
+            SaverAbilityId = 1
+        };
     }
 }

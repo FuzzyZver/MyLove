@@ -161,7 +161,7 @@ public class InputSystem: Injects, IEcsInitSystem, IEcsRunSystem
 
     private void OnAbilityKeyPress(InputAction.CallbackContext callbackContext)
     {
-
+        EcsWorld.NewEntity().Get<AbilityInputEvent>();
     }
 
     private void OnNFSKeyPress(InputAction.CallbackContext callbackContext)

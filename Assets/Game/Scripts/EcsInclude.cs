@@ -63,6 +63,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<SpawnItemEvent>()
             .OneFrame<ItemEnterEvent>()
             .OneFrame<ItemExitEvent>()
+            .OneFrame<AbilityInputEvent>()
 
             .Add(new ConsoleSystem())
             .OneFrame<CommandEvent>()

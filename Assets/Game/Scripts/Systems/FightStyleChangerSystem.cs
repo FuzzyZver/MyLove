@@ -29,6 +29,7 @@ public class FightStyleChangerSystem: Injects, IEcsInitSystem, IEcsRunSystem
             if (fightStyleId == 4) playerEntity.Get<RebelFlag>();
             if (fightStyleId == 5) playerEntity.Get<SaverFlag>();
             playerEntity.Get<CombatComponent>().CombatStyleId = fightStyleId;
+            Debug.Log($"Стиль боя сейчас:{fightStyleId}");
         }
     }
 }
