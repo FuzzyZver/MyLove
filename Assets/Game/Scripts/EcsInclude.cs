@@ -43,6 +43,8 @@ public class EcsInclude: MonoBehaviour
             .Add(new ChildSystem())
             .Add(new RebelSystem())
             .Add(new SaverSystem())
+
+            .Add(new PlayerAnimationSystem())
             
 
             //OneFrame<..

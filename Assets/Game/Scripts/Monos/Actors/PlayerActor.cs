@@ -9,6 +9,7 @@ public class PlayerActor: Actor
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Transform _stepPosition;
     [SerializeField] private Collider2D _collider2D;
+    [SerializeField] private Animator _animator;
 
     public override void ExpandEntity(EcsEntity entity)
     {
@@ -44,5 +45,6 @@ public class PlayerActor: Actor
             RebelAbilityId = 1,
             SaverAbilityId = 1
         };
+        entity.Get<AnimatorRef>().Animator = _animator;
     }
 }
