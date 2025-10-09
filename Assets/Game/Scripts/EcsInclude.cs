@@ -56,6 +56,7 @@ public class EcsInclude: MonoBehaviour
             .OneFrame<FarAttackInputEvent>()
             .OneFrame<GroundRaycastEvent>()
             .OneFrame<GroundEvent>()
+            .OneFrame<JumpInputEvent>()
             .OneFrame<CloseEyeRaycastEvent>()
             .OneFrame<FarEyeRaycastEvent>()
             .OneFrame<DamageEvent>()

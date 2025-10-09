@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerActor: {fileID: 0}
   Speed: 15
-  JumpForce: 50
+  JumpForce: 100
   DashDistance: 30
   DashTime: 0.06
   Health: 100
