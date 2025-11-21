@@ -14,10 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerActor: {fileID: 0}
   Speed: 15
-  JumpForce: 100
   DashDistance: 30
   DashTime: 0.06
   Health: 100
   Damage: 20
   Shield: 50
   TimeUntilRegenerationShield: 5
+  CoyoteTime: 0.12
+  JumpForce: 15
+  JumpVelocity: 0
+  JumpMultiply: 1.5
+  LastGroundTime: -999
+  HangGravityScale: 5
+  NormalGravityScale: 40
+  HangGravityMultiply: 1.5
+  Multiply: 1.5
