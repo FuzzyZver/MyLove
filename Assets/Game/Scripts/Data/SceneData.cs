@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneData : MonoBehaviour
@@ -6,4 +7,5 @@ public class SceneData : MonoBehaviour
     public PlayerActor PlayerOnScene;
     public EnemyActor EnemyOnScene;
     public PlatformEffector2D OneWayPlatforms;
+    public List<DoorActor> Doors;
 }

@@ -8,5 +8,10 @@ public class LevelInitSystem: Injects, IEcsPreInitSystem
         SceneData.PlayerOnScene.Init(EcsWorld);
         SceneData.EnemyOnScene.Init(EcsWorld);
         UI.Console.Init(EcsWorld);
+
+        foreach (DoorActor door in SceneData.Doors)
+        {
+            door.Init(EcsWorld);
+        }
     }
 }

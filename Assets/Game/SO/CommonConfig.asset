@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618e81653564d147bff590cfbc48420, type: 3}
   m_Name: CommonConfig
   m_EditorClassIdentifier: 
+  OpenDoorSprite: {fileID: -9002537574882471207, guid: 8f0ea1be2caef99419fd1dd536e970ef, type: 3}
+  CloseDoorSprite: {fileID: 6882303124984309148, guid: 8f0ea1be2caef99419fd1dd536e970ef, type: 3}
+  DoorCloseTime: 2
   ForegroundPrefab: {fileID: 4135788440692804863, guid: eb19fb751c120864d9e3320f2fb17d61, type: 3}
   MiddlegroundPrefab: {fileID: 4935588557563259367, guid: 8ef0c54de7f50f7458848b9a2b3ae218, type: 3}
   BackgroundPrefab: {fileID: 242792422023919416, guid: a8f5e68e01e9db14d87c5ffbc09d18f6, type: 3}
