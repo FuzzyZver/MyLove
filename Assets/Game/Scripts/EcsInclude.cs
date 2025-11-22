@@ -37,6 +37,7 @@ public class EcsInclude: MonoBehaviour
             .Add(new SpawnItemSystem())
             .Add(new ItemPickUpSystem())
             .Add(new OneWayPlatformSystem())
+            .Add(new BackgroundLoopSystem())
 
             .Add(new FightStyleChangerSystem())
             .Add(new CriticSystem())
